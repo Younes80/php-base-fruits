@@ -10,9 +10,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="home">Accueil</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="create">Ajouter un produit</a>
-                    </li>
+                    <?php if (isset($_SESSION['access'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="create">Ajouter un produit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout">Déconnecter</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
