@@ -1,5 +1,8 @@
 <?php
-$pdo = require_once './data/database.php';
+// $pdo = require_once './data/database.php';
+require_once './controllers/product/ProductController.php';
+
+$productController = new ProductController();
 
 $page = $_GET['page'] ?? '';
 
@@ -7,13 +10,31 @@ $page = $_GET['page'] ?? '';
 
 ob_start();
 
-if ($page === "home") {
-    require_once './controllers/home.controller.php';
-} elseif ($page === "edit") {
-    require_once './controllers/edit.controller.php';
-} elseif ($page === "delete") {
-    require_once './controllers/delete.controller.php';
+
+try {
+    if (empty($page)) {
+        header('Location: home');
+    } else {
+        if ($page === "home") {
+            $productController->getProducts();
+        } elseif ($page === "create") {
+            $productController->setProduct();
+        } elseif ($page === "edit") {
+            $productController->setProduct();
+        } elseif ($page === "delete") {
+            $productController->deleteProduct();
+        } elseif ($page === "product") {
+            $productController->getProduct();
+        }
+    }
+} catch (Exception $e) {
+    $msg = $e->getMessage();
+    echo $msg;
 }
+
+
+
+
 
 
 $content = ob_get_clean();
