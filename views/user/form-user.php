@@ -1,10 +1,10 @@
 <?php if ($_SERVER['REQUEST_URI'] === '/php-base-fruit/register') : ?>
-    <div class="row">
+    <div class="row fadein">
         <div class="col-md-12 mb-5">
             <h2>S'enregister</h2>
         </div>
     </div>
-    <form class="w-100" action="" method="POST">
+    <form class="w-100 fadein" action="" method="POST">
         <div class="mb-3">
             <label for="username">Pseudo</label>
             <input class="form-control" type="text" name="username" id="username" placeholder="Pseudo">
@@ -30,12 +30,12 @@
         <button class="btn btn-primary">Confirmer</button>
     </form>
 <?php elseif ($_SERVER['REQUEST_URI'] === '/php-base-fruit/login') : ?>
-    <div class="row">
+    <div class="row fadein">
         <div class="col-md-12 mb-5">
             <h2>Se connecter</h2>
         </div>
     </div>
-    <form class="w-100" action="" method="POST">
+    <form class="w-100 fadein" action="" method="POST">
         <div class="mb-3">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" id="email" placeholder="email">

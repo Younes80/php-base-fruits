@@ -21,3 +21,20 @@ h6,
 	transform: scale(1.1);
 	transition: all 0.5s;
 }
+
+  /* Animation fadeIn */
+
+.fadein {
+	animation-duration: 1s;
+	animation-name: fadein;
+  }
+  
+  @keyframes fadein {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }

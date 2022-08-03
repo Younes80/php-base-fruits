@@ -15,7 +15,7 @@
     <?php require_once './includes/header.php' ?>
 
     <div class="container d-flex flex-fill align-items-center justify-content-center">
-        <div class="d-flex flex-column w-100">
+        <div class="d-flex flex-column w-100 overflow-hidden fadein">
             <?= $content ?>
         </div>
     </div>

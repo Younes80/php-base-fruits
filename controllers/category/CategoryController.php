@@ -1,6 +1,9 @@
 <?php
 
-require_once './models/category/CategoryManager.php';
+namespace controllers\category;
+
+use models\category\CategoryManager;
+// require_once './models/category/CategoryManager.php';
 class CategoryController
 {
 

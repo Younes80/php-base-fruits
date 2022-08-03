@@ -1,8 +1,13 @@
 <?php
 
+namespace controllers\product;
 
-require_once './models/product/ProductManager.php';
-require_once './models/category/CategoryManager.php';
+use controllers\Security;
+use models\product\ProductManager;
+use models\category\CategoryManager;
+
+// require_once './models/product/ProductManager.php';
+// require_once './models/category/CategoryManager.php';
 
 class ProductController
 {
@@ -52,6 +57,8 @@ class ProductController
 
     public function getProduct()
     {
+        $isLoggedIn = Security::accessSession() ?? false;
+
         $id = $_GET['id'] ?? '';
         $product = $this->productManager->getProduct($id);
         // print_r($product);

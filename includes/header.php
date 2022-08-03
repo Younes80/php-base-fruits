@@ -10,13 +10,21 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="home">Accueil</a>
                     </li>
-                    <?php if (isset($_SESSION['access'])) : ?>
+                    <?php if ($isLoggedIn) : ?>
                         <li class="nav-item">
                             <a class="nav-link" href="create">Ajouter un produit</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout">Déconnecter</a>
                         </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register">S'inscrire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Se connecter</a>
+                        </li>
+
                     <?php endif; ?>
                 </ul>
             </div>

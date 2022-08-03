@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row fadein">
     <div class="col-md-12 mb-5">
-        <h2><?= $id ? 'Modifier' . $product->name : 'Ajouter un produit' ?></h2>
+        <h2><?= $id ? 'Modifier ' . $product->name : 'Ajouter un produit' ?></h2>
     </div>
 </div>
 
 
-<form class="w-100" action="<?= $id === '' ?  "create" : "edit&id=$product->id" ?>" method="POST" enctype="multipart/form-data">
+<form class="w-100 fadein" action="<?= $id === '' ?  "create" : "edit&id=$product->id" ?>" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="name">Nom du produit</label>
         <input class="form-control" type="text" name="name" id="name" value="<?= $product->name ?? '' ?>">

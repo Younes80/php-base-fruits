@@ -1,23 +1,29 @@
- <?php
+<?php
 
-    class Database
+namespace models;
+
+use PDO;
+
+
+
+class Database
+{
+    private static $pdo;
+
+    private static function setBdd()
     {
-        private static $pdo;
-
-        private static function setBdd()
-        {
-            self::$pdo = new PDO('mysql:host=localhost;dbname=sql_base2', 'root', 'ApQm102938475G!!', [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
-            ]);
-            self::$pdo->exec("SET CHARACTER SET utf8");
-        }
-
-        protected function getBdd()
-        {
-            if (self::$pdo === null) {
-                self::setBdd();
-            }
-            return self::$pdo;
-        }
+        self::$pdo = new PDO('mysql:host=localhost;dbname=sql_base2', 'root', 'ApQm102938475G!!', [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
+        ]);
+        self::$pdo->exec("SET CHARACTER SET utf8");
     }
+
+    protected function getBdd()
+    {
+        if (self::$pdo === null) {
+            self::setBdd();
+        }
+        return self::$pdo;
+    }
+}
